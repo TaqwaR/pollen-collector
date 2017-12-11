@@ -5,14 +5,9 @@ var crystalOne = [];
 var crystalTwo = [];
 var crystalThree = [];
 
-var numberGoal
-//random number between 19 and 120 (for number goal)
-
-var crystalNumber
-//random between 1 and 12 (for each clickable crystal)
-
-var totalPoints = [];
-//counter (store numbers for each click). Push numbers from clicks and store here.
+var numberGoal //random number between 19 and 120 (for number goal)
+var crystalNumber //random between 1 and 12 (for each clickable crystal)
+var totalPoints = []; //counter (push/ store numbers for each click here).
 
 var winCounter
 var lossCounter
@@ -21,52 +16,30 @@ var lossCounter
 //==================================
 
 /////goal number
-function numGen(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  numberGoal = Math.floor(Math.random() * (max - min +1)) + min;
+function goalNumGen() {
+  numberGoal = Math.floor(Math.random() * (120 - 19 +1)) + 19;
   console.log(numberGoal);
-}
-
-/////crystalOne number
-function numGenCrystalOne(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  crystalNumber = Math.floor(Math.random() * (max - min +1)) + min;
-  console.log(crystalNumber);
-  crystalOne.push(crystalNumber);
-  console.log(crystalOne);
 };
 
-///crystalTwo number
-function numGenCrystalTwo(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  crystalNumber = Math.floor(Math.random() * (max - min +1)) + min;
-  console.log(crystalNumber);
-  crystalTwo.push(crystalNumber);
-  console.log(crystalTwo);
+/////crystal number
+function crystalNumGen(crystal) {
+  crystal = Math.floor(Math.random() * (12 - 1 +1)) + 1;
 };
 
-///crystalThree number
-function numGenCrystalThree(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  crystalNumber = Math.floor(Math.random() * (max - min +1)) + min;
-  console.log(crystalNumber);
-  crystalThree.push(crystalNumber);
-  console.log(crystalThree);
-}
+////take result of crystalNumGen and push to crystalX array
+function crystalPush(crystal) {
+  crystal.push(crystalNumGen(crystal));
+};
 
-/////event listener - on click function
+/////event listeners - on click function
 document.getElementById('crystal-1').addEventListener('click', (function increaseTotalPoints() {
     //when clicked, increase totalPoints by crystal's value.
     //How to increase by same value? i.e. if value is 5, how do I add 5?
+    //curently only allows one click
     document.getElementById('total-points').innerHTML = totalPoints + crystalOne;
 }));
 
-
-function totalPointsAdder() {
+function totalPoints() {
 
 };
 
@@ -76,18 +49,12 @@ function reset() {};
 /////MAIN PROCESS
 //==================================
 
-numGen(19, 120);
+goalNumGen();
 
-//can I use .indexOf() to assign each crystal numGenCrystalOne[i]?
-numGenCrystalOne(1, 12);
-numGenCrystalTwo(1, 12);
-numGenCrystalThree(1, 12);
+crystalNumGen(crystalOne);
+console.log(crystalNumGen(crystalOne));
+
+crystalPush(crystalOne);
+console.log(crystalPush(crystalOne));
 
 console.log(crystalOne);
-console.log(crystalTwo);
-console.log(crystalThree);
-
-
-//crystalValue(crystalOne);
-//crystalValue(crystalTwo);
-//crystalValue(crystalThree);
