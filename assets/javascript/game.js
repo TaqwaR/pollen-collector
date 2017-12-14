@@ -47,6 +47,7 @@ function goalNumGen() {
 
 /////on click
 $(".crystal-img").click(function(event) {
+      goalNumGen();
       totalPoints += parseInt($(this).attr('random-num'));
       $("#total-points").html("<p>Total: " + totalPoints + "</p>");
       console.log($(this).attr('random-num'));
@@ -67,4 +68,4 @@ if (totalPoints === numberGoal) {
 /////MAIN PROCESS
 //==================================
 
-goalNumGen();
+//goalNumGen();
