@@ -1,10 +1,23 @@
-
-
 #container {
-  width: 980px;
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*justify-content: space-between;*/
+  width: 890px;
   margin: 0 auto;
 }
 
+
 h2, h3 {
   text-align: center;
+}
+
+
+.crystal {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: space-around;
+  border: 2px solid red;
+  width: 200px;
+  height: 200px;
 }

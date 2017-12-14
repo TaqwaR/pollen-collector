@@ -1,16 +1,14 @@
 /////GLOBAL VARIABLES
 //==================================
 
-var crystalOne = [];
-var crystalTwo = [];
-var crystalThree = [];
+//var crystalsNumDiv;
 
 var numberGoal //random number between 19 and 120 (for number goal)
-var crystalNumber //random between 1 and 12 (for each clickable crystal)
-var totalPoints = []; //counter (push/ store numbers for each click here).
+var totalPoints = 0; //counter (push/ store numbers for each click here).
 
-var winCounter
-var lossCounter
+var winCounter = 0;
+var lossCounter = 0;
+
 
 /////FUNCTIONS
 //==================================
@@ -18,43 +16,57 @@ var lossCounter
 /////goal number
 function goalNumGen() {
   numberGoal = Math.floor(Math.random() * (120 - 19 +1)) + 19;
+  $("#random-number").html("Number Goal: " + numberGoal);
   console.log(numberGoal);
 };
 
-/////crystal number
-function crystalNumGen(crystal) {
-  crystal = Math.floor(Math.random() * (12 - 1 +1)) + 1;
-};
+//for loop that creates each crystal and assigns it a random number value.
 
-////take result of crystalNumGen and push to crystalX array
-function crystalPush(crystal) {
-  crystal.push(crystalNumGen(crystal));
-};
+  for (var i = 0; i < 4; i++) {
+    var crystalNumber = Math.floor(Math.random() * (12 - 1 +1)) + 1;
+    console.log('crystalNumber: ', crystalNumber);
 
-/////event listeners - on click function
-document.getElementById('crystal-1').addEventListener('click', (function increaseTotalPoints() {
-    //when clicked, increase totalPoints by crystal's value.
-    //How to increase by same value? i.e. if value is 5, how do I add 5?
-    //curently only allows one click
-    document.getElementById('total-points').innerHTML = totalPoints + crystalOne;
-}));
+    var crystal = $("<div>");
+        crystal.attr({
+          "class": 'crystal',
+          "random-num": crystalNumber
+        });
 
-function totalPoints() {
+    $('.crystals').prepend(crystal);
+  };
 
-};
+// function totalPointsAdder() {
+  // totalPoints += crystalNumber; //totalPoints = totalPoints+crystalNumber
+//   console.log(totalPoints);
+  $("#total-points").html("Total: " + totalPoints);
 
-function reset() {};
 
+/////on click
+$(".crystal").click(function(event) {
+      totalPoints += parseInt($(this).attr('random-num'));
+      $("#total-points").html("Total: " + totalPoints);
+      console.log($(this).attr('random-num'));
+  });
+
+  // $(".crystal-num").attr('random-num', crystalNumber);
+  // //$(".crystal-num").append(crystalNumGen())
+  // $("#random-number").html("number goal: " + numberGoal);
+  // console.log('crystalNumber: ', crystalNumber);
+  // totalPointsAdder();
+
+
+////if statments
+// if (totalPoints === numberGoal) {
+//     $("#wins").append(++winCounter);
+//   } else if (totalPoints > numberGoal) {
+//     $("#losses").append(++loseCounter);
+//   };
+//
+//
+// function reset() {};
+//
 
 /////MAIN PROCESS
 //==================================
 
 goalNumGen();
-
-crystalNumGen(crystalOne);
-console.log(crystalNumGen(crystalOne));
-
-crystalPush(crystalOne);
-console.log(crystalPush(crystalOne));
-
-console.log(crystalOne);
