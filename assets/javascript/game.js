@@ -3,8 +3,8 @@
 
 //var crystalsNumDiv;
 
-var numberGoal //random number between 19 and 120 (for number goal)
-var totalPoints = 0; //counter (push/ store numbers for each click here).
+var numberGoal;
+var totalPoints = 0;
 
 var winCounter = 0;
 var lossCounter = 0;
@@ -36,17 +36,14 @@ function goalNumGen() {
     var crystalNumber = Math.floor(Math.random() * (12 - 1 + 1)) +1;
     console.log('crystalNumber: ', crystalNumber);
     $(".crystal-img").attr('random-num', crystalNumber);
-
-    // $(".crystal-img").attr('random-num', crystalNumber);
-    // //$(".crystal-img").append('random-num', crystalNumber);
   };
 
+  $("#total-points").html("<p>Total: " + totalPoints + "</p>");
 
 // function totalPointsAdder() {
   // totalPoints += crystalNumber; //totalPoints = totalPoints+crystalNumber
 //   console.log(totalPoints);
-  $("#total-points").html("<p>Total: " + totalPoints + "</p>");
-
+// }
 
 /////on click
 $(".crystal-img").click(function(event) {
@@ -54,12 +51,6 @@ $(".crystal-img").click(function(event) {
       $("#total-points").html("<p>Total: " + totalPoints + "</p>");
       console.log($(this).attr('random-num'));
   });
-
-  // $(".crystal-num").attr('random-num', crystalNumber);
-  // //$(".crystal-num").append(crystalNumGen())
-  // $("#random-number").html("number goal: " + numberGoal);
-  // console.log('crystalNumber: ', crystalNumber);
-  // totalPointsAdder();
 
 
 ////if statments
