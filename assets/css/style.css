@@ -1,23 +1,103 @@
-#container {
-  /*display: flex;*/
-  /*align-items: center;*/
-  /*justify-content: space-between;*/
+.container {
   width: 890px;
-  margin: 0 auto;
+  margin: 1em auto;
+  background-color: #c5faf4;
+  /*border-radius: 50px;*/
+}
+
+.bee-cursor {
+  cursor: url(../images/honey-bee.png), auto;
 }
 
 
-h2, h3 {
-  text-align: center;
+#jumbotron {
+  padding: 1em;
+  clear: both;
+}
+
+#instructions {
+  /*padding: 2em;*/
+  clear: both;
+}
+
+#inner-content {
+  padding: 1em;
 }
 
 
-.crystal {
+#random-number {
+  float: left;
+  margin: 2em;
+  margin-left: 8em;
+  margin-right: 5em;
+}
+
+#total-points {
+  float: left;
+  margin: 2em;
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+#results {
+  float: left;
+  margin: 2em;
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+#wins {
+  margin-bottom: 1em;
+}
+
+#losses {
+  margin-bottom: 1em;
+  margin-top: 2em;
+}
+
+.crystals {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 10em;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  font-family: 'Signika', sans-serif;
+}
+
+h1 {
+  font-weight: bolder;
+  font-size: 4em;
+}
+
+p {
+  font-family: 'Signika', sans-serif;
+}
+
+.crystal-img {
+  display: flex;
+  flex-direction: row;
   align-content: flex-start;
   justify-content: space-around;
-  border: 2px solid red;
+  /*border: 2px solid red;*/
   width: 200px;
   height: 200px;
+  clear: both;
+
+}
+
+.crystal-img img {
+  width: 120px;
+  height: 120px;
+  margin: 2.5em;
+}
+
+
+
+.grow:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
 }
