@@ -54,15 +54,15 @@ $(".crystal-img").click(function(event) {
 
 
 ////if statments
-// if (totalPoints === numberGoal) {
-//     $("#wins").append(++winCounter);
-//   } else if (totalPoints > numberGoal) {
-//     $("#losses").append(++loseCounter);
-//   };
-//
-//
+if (totalPoints === numberGoal) {
+    $("#wins").append(++winCounter);
+  } else if (totalPoints > numberGoal) {
+    $("#losses").append(++loseCounter);
+  };
+
+
 // function reset() {};
-//
+
 
 /////MAIN PROCESS
 //==================================
