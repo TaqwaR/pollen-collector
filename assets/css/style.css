@@ -1,7 +1,12 @@
+body {
+  font-family: 'Signika', sans-serif;
+}
+
 .container {
   width: 890px;
   margin: 1em auto;
   background-color: #c5faf4;
+  border: 7px solid lavenderblush;
   /*border-radius: 50px;*/
 }
 
@@ -12,6 +17,7 @@
 
 #jumbotron {
   padding: 1em;
+  padding-top: 0;
   clear: both;
 }
 
@@ -41,7 +47,7 @@
 
 #results {
   float: left;
-  margin: 2em;
+  /*margin: 2em;*/
   margin-left: 5em;
   margin-right: 5em;
 }
@@ -60,6 +66,7 @@
   justify-content: space-around;
   align-content: center;
   margin-top: 12em;
+  padding-bottom: 1em;
 }
 
 h1, h2, h3 {
