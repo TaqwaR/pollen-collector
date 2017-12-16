@@ -22,7 +22,6 @@ $("#total-points").html("<p>Total: " + totalPoints + "</p>");
 function goalNumGen() {
   numberGoal = Math.floor(Math.random() * (120 - 19 +1)) + 19;
   $("#random-number").html("<p>Number Goal: " + numberGoal + "</p>");
-  console.log(numberGoal);
 };
 
 goalNumGen();
@@ -48,7 +47,6 @@ $(".crystalOne").click(function(event) {
       $(".crystalOne").attr('data-random-num', crystalOne);
       totalPoints += parseInt($(this).attr('data-random-num'));
       $("#total-points").html("<p>Total: " + totalPoints + "</p>");
-      console.log($(this).attr('data-random-num'));
 
       ////if statement
       if (totalPoints === numberGoal) {
@@ -66,7 +64,6 @@ $(".crystalTwo").click(function(event) {
         $(".crystalTwo").attr('data-random-num', crystalTwo);
         totalPoints += parseInt($(this).attr('data-random-num'));
         $("#total-points").html("<p>Total: " + totalPoints + "</p>");
-        console.log($(this).attr('data-random-num'));
 
         ////if statement
         if (totalPoints === numberGoal) {
@@ -84,7 +81,6 @@ $(".crystalThree").click(function(event) {
         $(".crystalThree").attr('data-random-num', crystalThree);
         totalPoints += parseInt($(this).attr('data-random-num'));
         $("#total-points").html("<p>Total: " + totalPoints + "</p>");
-        console.log($(this).attr('data-random-num'));
 
         ////if statement
         if (totalPoints === numberGoal) {
@@ -102,7 +98,6 @@ $(".crystalFour").click(function(event) {
           $(".crystalFour").attr('data-random-num', crystalFour);
           totalPoints += parseInt($(this).attr('data-random-num'));
           $("#total-points").html("<p>Total: " + totalPoints + "</p>");
-          console.log($(this).attr('data-random-num'));
 
             ////if statement
             if (totalPoints === numberGoal) {
