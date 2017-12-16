@@ -1,16 +1,21 @@
 /////GLOBAL VARIABLES
 //==================================
 
-//var crystalsNumDiv;
-
 var numberGoal;
 var totalPoints = 0;
 
 var winCounter = 0;
 var lossCounter = 0;
 
+var crystalOne = Math.floor(Math.random() * (12 - 1 + 1)) +1;
+var crystalTwo = Math.floor(Math.random() * (12 - 1 + 1)) +1;
+var crystalThree = Math.floor(Math.random() * (12 - 1 + 1)) +1;
+var crystalFour = Math.floor(Math.random() * (12 - 1 + 1)) +1;
 
-/////FUNCTION
+
+$("#total-points").html("<p>Total: " + totalPoints + "</p>");
+
+/////FUNCTIONS
 //==================================
 
 /////goal number
@@ -20,25 +25,32 @@ function goalNumGen() {
   console.log(numberGoal);
 };
 
-//===================================
+goalNumGen();
 
-//for loop that assigns each img a random number value.
-  for (var i = 0; i < 4; i++) {
-    var crystalNumber = Math.floor(Math.random() * (12 - 1 + 1)) +1;
-    console.log('crystalNumber: ', crystalNumber);
-    $(".crystal-img").attr('data-random-num', crystalNumber);
-    ///add another for loop here
-    }
+/////reset
+function reset() {
+  goalNumGen();
+  totalPoints = 0;
+
+  crystalOne = Math.floor(Math.random() * (12 - 1 + 1)) +1;
+  crystalTwo = Math.floor(Math.random() * (12 - 1 + 1)) +1;
+  crystalThree = Math.floor(Math.random() * (12 - 1 + 1)) +1;
+  crystalFour = Math.floor(Math.random() * (12 - 1 + 1)) +1;
 
   $("#total-points").html("<p>Total: " + totalPoints + "</p>");
+};
 
-/////on click
-$(".crystal-img").click(function(event) {
+/////CLICK EVENTS
+//===================================
+
+
+$(".crystalOne").click(function(event) {
+      $(".crystalOne").attr('data-random-num', crystalOne);
       totalPoints += parseInt($(this).attr('data-random-num'));
       $("#total-points").html("<p>Total: " + totalPoints + "</p>");
       console.log($(this).attr('data-random-num'));
 
-      ////if statements
+      ////if statement
       if (totalPoints === numberGoal) {
           var win = 1;
           $("#wins").after(winCounter += win);
@@ -50,15 +62,56 @@ $(".crystal-img").click(function(event) {
         };
   });
 
+$(".crystalTwo").click(function(event) {
+        $(".crystalTwo").attr('data-random-num', crystalTwo);
+        totalPoints += parseInt($(this).attr('data-random-num'));
+        $("#total-points").html("<p>Total: " + totalPoints + "</p>");
+        console.log($(this).attr('data-random-num'));
 
-console.log(totalPoints);
+        ////if statement
+        if (totalPoints === numberGoal) {
+            var win = 1;
+            $("#wins").after(winCounter += win);
+            reset();
+          } else if (totalPoints > numberGoal) {
+            var lose = 1;
+            $("#losses").after(lossCounter += lose);
+            reset();
+          };
+    });
 
+$(".crystalThree").click(function(event) {
+        $(".crystalThree").attr('data-random-num', crystalThree);
+        totalPoints += parseInt($(this).attr('data-random-num'));
+        $("#total-points").html("<p>Total: " + totalPoints + "</p>");
+        console.log($(this).attr('data-random-num'));
 
-function reset() {
-  goalNumGen();
-  totalPoints = 0;
-};
+        ////if statement
+        if (totalPoints === numberGoal) {
+              var win = 1;
+              $("#wins").after(winCounter += win);
+              reset();
+            } else if (totalPoints > numberGoal) {
+              var lose = 1;
+              $("#losses").after(lossCounter += lose);
+              reset();
+            };
+      });
 
-//==================================
+$(".crystalFour").click(function(event) {
+          $(".crystalFour").attr('data-random-num', crystalFour);
+          totalPoints += parseInt($(this).attr('data-random-num'));
+          $("#total-points").html("<p>Total: " + totalPoints + "</p>");
+          console.log($(this).attr('data-random-num'));
 
-goalNumGen();
+            ////if statement
+            if (totalPoints === numberGoal) {
+                var win = 1;
+                $("#wins").after(winCounter += win);
+                reset();
+              } else if (totalPoints > numberGoal) {
+                var lose = 1;
+                $("#losses").after(lossCounter += lose);
+                reset();
+              };
+        });

@@ -34,15 +34,17 @@ body {
 #random-number {
   float: left;
   margin: 2em;
-  margin-left: 8em;
-  margin-right: 5em;
+  margin-left: 7em;
+  margin-right: 2em;
+  font-size: 21px;
 }
 
 #total-points {
   float: left;
   margin: 2em;
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-left: 4em;
+  margin-right: 2em;
+  font-size: 21px;
 }
 
 #results {
@@ -54,11 +56,17 @@ body {
 
 #wins {
   margin-bottom: 1em;
+  margin-left: 0em;
+  margin-right: 2em;
+  font-size: 21px;
 }
 
 #losses {
   margin-bottom: 1em;
   margin-top: 2em;
+  margin-left: 0em;
+  margin-right: 2em;
+  font-size: 21px;
 }
 
 .crystals {
@@ -83,7 +91,7 @@ p {
   font-family: 'Signika', sans-serif;
 }
 
-.crystal-img {
+.crystalOne, .crystalTwo, .crystalThree, .crystalFour {
   display: flex;
   flex-direction: row;
   align-content: flex-start;
@@ -95,7 +103,7 @@ p {
 
 }
 
-.crystal-img img {
+.crystalOne img, .crystalTwo img, .crystalThree img, .crystalFour img {
   width: 120px;
   height: 120px;
   margin: 2.5em;
